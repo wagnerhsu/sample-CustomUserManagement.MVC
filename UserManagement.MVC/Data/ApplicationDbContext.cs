@@ -17,6 +17,8 @@ namespace UserManagement.MVC.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            // By default the schema is `ado`, if we change default schema to `Identity`,
+            // we could access the following table with Identity.User, Identity.Role etc.
             builder.HasDefaultSchema("Identity");
             builder.Entity<ApplicationUser>(entity =>
             {
